@@ -1,3 +1,10 @@
+
+// Set Player and Computer scores to zero
+let humanScore = 0;
+let computerScore = 0;
+
+
+// Get Computer choice
 function getComputerChoice() {
 
     // Generate a random number between 0-0.99 with Math.random
@@ -15,13 +22,32 @@ function getComputerChoice() {
     } else if (randomNum === 2) {
         console.log("Scissors");
     }
-
-    // Shows the value that was generated above
-    console.log(randomNum);
 }
 
-// Output the choice
+// Output Computer choice
 getComputerChoice();
+
+// Get Player choice
+function getPlayerChoice() {
+
+    // Ask the player for their choice
+    var playerChoice = prompt("Rock, Paper, or Scissors?", "Choose wisely...");
+
+    // Convert player choice to a number
+
+    if (playerChoice === "Rock") {
+        console.log(0);
+    } else if (playerChoice === "Paper") {
+        console.log(1);
+    } else if (playerChoice === "Scissors") {
+        console.log(2)
+    }
+}
+
+// Output Player choice
+getPlayerChoice();
+
+
 
 
 // Roadmap
