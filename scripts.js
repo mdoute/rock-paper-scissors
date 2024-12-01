@@ -1,5 +1,5 @@
 
-// Set Player and Computer scores to zero
+// Set Human and Computer scores to zero
 let humanScore = 0;
 let computerScore = 0;
 
@@ -11,49 +11,65 @@ function getComputerChoice() {
     // Multiply the random number by 3
     // Round the random number down to the nearest whole number, either 0, 1, or 2
 
-    var randomNum = Math.floor(Math.random() * 3);
+    var computerChoice = Math.floor(Math.random() * 3);
 
     // Assign Rock, Paper, or Scissors based on the random number
 
-    if (randomNum === 0) {
-        console.log("Rock");
-    } else if (randomNum === 1) {
-        console.log("Paper");
-    } else if (randomNum === 2) {
-        console.log("Scissors");
+    if (computerChoice === 0) {
+        console.log("Computer chose: Rock"); // Log the computer's choice
+        return "Rock";
+    } else if (computerChoice === 1) {
+        console.log("Computer chose: Paper"); // Log the computer's choice
+        return "Paper";
+    } else if (computerChoice === 2) {
+        console.log("Computer chose: Scissors"); // Log the computer's choice
+        return "Scissors";
     }
 }
 
-// Output Computer choice
-getComputerChoice();
 
-// Get Player choice
-function getPlayerChoice() {
+// Get Human choice
+function getHumanChoice() {
 
-    // Ask the player for their choice
-    var playerChoice = prompt("Rock, Paper, or Scissors?", "Choose wisely...");
+    // Ask the human for their choice
+    // Convert their input to lowercase to match ALL InPuT cases
+    var humanChoice = prompt("Rock, Paper, or Scissors?", "Choose wisely...").toLowerCase();
 
-    // Convert player choice to a number
+    // Convert human choice to a number
 
-    if (playerChoice === "Rock") {
-        console.log(0);
-    } else if (playerChoice === "Paper") {
-        console.log(1);
-    } else if (playerChoice === "Scissors") {
-        console.log(2)
+    if (humanChoice === "rock") {
+        return "Rock";
+    } else if (humanChoice === "paper") {
+        return "Paper";
+    } else if (humanChoice === "scissors") {
+        return "Scissors";
     }
 }
 
-// Output Player choice
-getPlayerChoice();
-
-
-
-
-// Roadmap
-// Generate a random number - done
-// Assign that number a string based on its value - done
-// Output the computer selection - done
-// Ask the player for their input
-// Determine winner
-// Output the winner
+// Play a round and update score based on who wins
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === computerChoice) {
+        console.log("Tie! You both selected " + humanChoice +".")
+    } else if (
+        (humanChoice === "Rock" && computerChoice ==="Scissors") ||
+        (humanChoice === "Paper" && computerChoice ==="Rock") ||
+        (humanChoice === "Scissors" && computerChoice ==="Paper")
+    ) {
+        humanScore ++
+        console.log("You win! " + humanChoice + " beats " + computerChoice)
+    } else if (
+        (computerChoice === "Rock" && humanChoice ==="Scissors") ||
+        (computerChoice === "Paper" && humanChoice ==="Rock") ||
+        (computerChoice === "Scissors" && humanChoice ==="Paper")
+    ) {
+        computerScore ++
+        console.log("You Lose! " + humanChoice + " loses to " + computerChoice + ". Womp womp!")
+  }
+  console.log("Player score: " + humanScore);
+  console.log("Computer score: " + computerScore);
+}
+  
+const computerSelection = getComputerChoice();
+const humanSelection = getHumanChoice();
+  
+playRound(humanSelection, computerSelection);
