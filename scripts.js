@@ -45,6 +45,8 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
 
+    console.log("Welcome! This game consists of 5 rounds. The player the with highest score at the end wins. If you didn't assume that's how a winner was chosen, this may be a little too advanced for you. Check out Hello Kitty Island Adventure instead, available now on Nintendo Switch, PlayStation, PC, and Xbox.");
+
     //Define round logic with the round function
     function playRound() {
         const computerChoice = getComputerChoice();
@@ -72,7 +74,6 @@ function playGame() {
     }
     
     //Play round 5 times
-    console.log("Welcome! This game consists of 5 rounds. The player the with highest score at the end wins. If you didn't assume that's how a winner was chosen, this may be a little too advanced for you. Check out Hello Kitty Island Adventure instead, available now on Nintendo Switch, PlayStation, PC, and Xbox.")
     playRound();
     playRound();
     playRound();
