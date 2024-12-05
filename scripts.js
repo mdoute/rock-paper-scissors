@@ -11,24 +11,23 @@ function getComputerChoice() {
     // Assign Rock, Paper, or Scissors based on the random number
 
     if (computerChoice === 0) {
-        console.log("Computer chose: Rock"); // Log the computer's choice
+        //console.log("Computer chose: Rock"); // Log the computer's choice to make testing easier
         return "Rock";
     } else if (computerChoice === 1) {
-        console.log("Computer chose: Paper"); // Log the computer's choice
+        //console.log("Computer chose: Paper"); // Log the computer's choice to make testing easier
         return "Paper";
     } else if (computerChoice === 2) {
-        console.log("Computer chose: Scissors"); // Log the computer's choice
+        //console.log("Computer chose: Scissors"); // Log the computer's choice to make testing easier
         return "Scissors";
     }
 }
-
 
 // Get Human choice
 function getHumanChoice() {
 
     // Ask the human for their choice
     // Convert their input to lowercase to match ALL InPuT cases
-    var humanChoice = prompt("Rock, Paper, or Scissors?", "Choose wisely...").toLowerCase();
+    var humanChoice = prompt("Rock, paper, or scissors?", "Choose wisely...").toLowerCase();
 
     // Convert human choice to a number
 
@@ -41,23 +40,15 @@ function getHumanChoice() {
     }
 }
 
-// Play a round and update score based on who wins
-
-  
-
-  
-
-
-
 function playGame() {
     //Define player and computer score variables, set to 0
     let humanScore = 0;
     let computerScore = 0;
 
     //Define round logic with the round function
-    function playRound(humanChoice, computerChoice) {
-        const computerSelection = getComputerChoice();
-        const humanSelection = getHumanChoice();
+    function playRound() {
+        const computerChoice = getComputerChoice();
+        const humanChoice = getHumanChoice();
 
         if (humanChoice === computerChoice) {
             console.log("Tie! You both selected " + humanChoice +".")
@@ -67,7 +58,7 @@ function playGame() {
             (humanChoice === "Scissors" && computerChoice ==="Paper")
         ) {
             humanScore ++
-            console.log("You win! " + humanChoice + " beats " + computerChoice)
+            console.log("You win! " + humanChoice + " beats " + computerChoice + ".")
         } else if (
             (computerChoice === "Rock" && humanChoice ==="Scissors") ||
             (computerChoice === "Paper" && humanChoice ==="Rock") ||
@@ -81,13 +72,23 @@ function playGame() {
     }
     
     //Play round 5 times
-    playRound(humanSelection, computerSelection);
-    playRound(humanSelection, computerSelection);
-    playRound(humanSelection, computerSelection);
-    playRound(humanSelection, computerSelection);
-    playRound(humanSelection, computerSelection);
+    console.log("Welcome! This game consists of 5 rounds. The player the with highest score at the end wins. If you didn't assume that's how a winner was chosen, this may be a little too advanced for you. Check out Hello Kitty Island Adventure instead, available now on Nintendo Switch, PlayStation, PC, and Xbox.")
+    playRound();
+    playRound();
+    playRound();
+    playRound();
+    playRound();
 
     //Declare winner after 5 rounds
+    function gameOver() {
+        if (humanScore > computerScore) {
+            console.log("You win! Congratulations, you're smarter than a Javascript robot made by me, a total beginner programmer with no experience. Be proud of yourself, but don't quit that day job just yet. You've got a lot of work to do if you want to win the big RPS competition in Capital City.")
+        } else if (humanScore < computerScore) {
+            console.log("Yikes man, you lose.")
+        }
+    }
+
+    gameOver();
 
 }
 
