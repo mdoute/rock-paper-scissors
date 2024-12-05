@@ -85,7 +85,9 @@ function playGame() {
         if (humanScore > computerScore) {
             console.log("You win! Congratulations, you're smarter than a Javascript robot made by me, a total beginner programmer with no experience. Be proud of yourself, but don't quit that day job just yet. You've got a lot of work to do if you want to win the big RPS competition in Capital City.")
         } else if (humanScore < computerScore) {
-            console.log("Yikes man, you lose.")
+            console.log("You lose. All your rock paper scissors are belong to us.")
+        } else if (humanScore === computerScore) {
+            console.log("You tried, but unfortunately you tied. Better luck next time!")
         }
     }
 
