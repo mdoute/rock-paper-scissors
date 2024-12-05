@@ -1,5 +1,3 @@
 # rock-paper-scissors
 
-This project involves creating a rock paper scissors game
-It is to be played in the console of a web browser by 1 Player
-The Player will compete against the Computer
+This rock, paper, scissors game is an assignment for the Odin Project. The game consists of 5 rounds, with a winner declared at the end. It's a console game, so there's no GUI (yet).
