@@ -11,8 +11,7 @@ const roundDisplay = document.getElementById("roundDisplay");
 const buttonRow = document.getElementById("buttonRow");
 const newGameButtonRow = document.getElementById("newGameButtonRow");
 const newGameButton = document.createElement("button");
-newGameButton.addEventListener("click", playGame);
-
+newGameButton.addEventListener("click", resetGame);
 
 function getComputerChoice() {
     var computerChoice = Math.floor(Math.random() * 3);
@@ -36,10 +35,10 @@ function resetGame() {
     humanScore = 0;
     computerScore = 0;
     roundCount = 0;
+    playGame();
 }
 
 function playGame() {
-    resetGame();
     let humanScore = 0;
     let computerScore = 0;
     let roundCount = 0;
