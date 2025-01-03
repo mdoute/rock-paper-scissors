@@ -3,10 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="scripts.js"></script>
+    <script defer src="scripts.js"></script>
     <link rel="stylesheet" href="styles.css" />
-    <title>Open the console to play!</title>
+    <title>Rock, Paper, Scissors Game</title>
 </head>
 <body>
+    <H1>Rock, Paper, Scissors</H1>
+    <div id="welcomeMessage">Welcome! This game consists of 5 rounds. The player the with highest score at the end wins. If you didn't assume that's how a winner was chosen, this may be a little too advanced for you. Check out Hello Kitty Island Adventure instead, available now on Nintendo Switch, PlayStation, PC, and Xbox.</div>
+    <div id="gameScore">
+        <h2>Score</h2>
+        <div id="playerScoreContainer">Player: 0</div>
+        <div id="computerScoreContainer">Computer: 0</div>
+    </div>
+    <hr>
+    <div id="roundDisplay">Round 1 / 5</div>
+    <hr>
+    <div id="playerSelection"></div>
+    <div id="computerSelection"></div>
+    <div id="roundOutcome"></div>
+    <div id="buttonRow">
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+    </div>
+    <div id="newGameButtonRow"></div>
 </body>
 </html>
